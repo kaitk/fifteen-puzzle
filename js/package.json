@@ -1,0 +1,24 @@
+{
+  "name": "fifteen-puzzle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "puzzle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node puzzle.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "sinon": "^6.1.4",
+    "sinon-chai": "^3.2.0"
+  },
+  "dependencies": {
+    "tinyqueue": "^1.2.3"
+  }
+}
