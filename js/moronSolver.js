@@ -4,12 +4,12 @@ const shuffle = require('./shuffle');
 const { ReverseMoves } = require('./board');
 
 
-//Every 15-puzzle should be solved with less moves
+// Every 15-puzzle should be solved with less moves
 //TODO add other sizes
 const MAX_MOVES = 80;
 
-//Stupid internet solver that sucks
-//finds *a* solution (not the best solution) and no visited node logic
+// Stupid internet solver that sucks
+// finds *a* solution (not the best solution) and no visited node logic
 class MoronSolver {
 
   constructor(game) {

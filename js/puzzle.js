@@ -21,9 +21,9 @@ const EASY_GRID = [
 const game = new Game(new Board(SAMPLE_GRID));
 // const game = new Game(Board.generate());
 
-// const solver = new MoronSolver(game);
-//const solver = new StupidSolver(game);
-const solver = new Solver(game);
+const solver = new MoronSolver(game);
+// const solver = new StupidSolver(game);
+// const solver = new Solver(game);
 
 console.log('Started solving this board:');
 console.log(game.initialBoard.toString());
