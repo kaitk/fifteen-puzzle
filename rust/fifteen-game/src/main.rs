@@ -1,4 +1,7 @@
 extern crate rand;
+extern crate num;
+#[macro_use(smallvec)]
+extern crate smallvec;
 
 use board::{flatten, SixteenBoard};
 

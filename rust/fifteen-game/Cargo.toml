@@ -6,3 +6,4 @@ authors = ["Kait Kasak <kait@kasak.ee>"]
 [dependencies]
 smallvec = "0.6.5"
 rand = "0.5.5"
+num = "0.2.0"
