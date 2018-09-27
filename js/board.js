@@ -133,12 +133,6 @@ class Board {
     return (this.inversions() % 2) + (rowOfEmpty % 2) == 1;
   }
 
-  swap(idx1, idx2) {
-    const elem = this.flat[idx1];
-    this.flat[idx1] = this.flat[idx2];
-    this.flat[idx2] = elem;
-  }
-
   validMoves() {
     const xIdx = this.flat.indexOf(X);
     const moves = [];
@@ -157,6 +151,16 @@ class Board {
     return moves;
   }
 
+  
+  validMovesAsStr() {
+    return this.validMoves().map(m => MovesAsStr[m]);
+  }
+
+  swap(idx1, idx2) {
+    const elem = this.flat[idx1];
+    this.flat[idx1] = this.flat[idx2];
+    this.flat[idx2] = elem;
+  }
 
   moveIdx(move, xIdx) {
     if(move === Moves.LEFT) {
@@ -173,9 +177,6 @@ class Board {
     }
   }
 
-  validMovesAsStr() {
-    return this.validMoves().map(m => MovesAsStr[m]);
-  }
 
   move(move) {
     const xIdx = this.flat.indexOf(X);

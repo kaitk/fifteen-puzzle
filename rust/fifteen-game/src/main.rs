@@ -5,8 +5,11 @@ extern crate smallvec;
 
 use board::{flatten, SixteenBoard};
 
-mod board;
 mod grids;
+mod board;
+mod game;
+mod solver;
+
 
 const EASY_GRID: [[u8; 4]; 4] = [
     [2, 0, 6, 3],
