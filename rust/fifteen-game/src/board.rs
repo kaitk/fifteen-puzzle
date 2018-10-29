@@ -28,7 +28,7 @@ pub struct SixteenBoard {
     x_idx: usize,
 }
 
-fn get_reverse_move(move_type: Move) -> Move {
+fn get_reverse_move(move_type: &Move) -> Move {
     match move_type {
         Move::LEFT => { Move::RIGHT },
         Move::RIGHT => { Move::LEFT },
@@ -45,7 +45,7 @@ pub fn flatten(grid: [[u8; DIM]; DIM]) -> [u8; FLAT_DIM] {
     flat
 }
 
-fn calc_distance(flat: [u8; FLAT_DIM]) -> i32 {
+fn calc_distance(flat: &[u8; FLAT_DIM]) -> i32 {
     return flat
         .iter().enumerate()
         .fold(0, |sum, (idx, elem)| sum + elem_idx_distance(*elem, idx));
@@ -93,18 +93,18 @@ fn is_solvable(dim: usize, inversions: i32, x_idx: usize) -> bool {
     (inversions % 2) + (row_of_empty % 2) == 1
 }
 
-fn index_of(flat: [u8; 16], elem: u8) -> usize {
+fn index_of(flat: &[u8; 16], elem: u8) -> usize {
     flat.iter().position(|&e| e == elem).unwrap()
 }
 
 impl SixteenBoard {
 
     pub fn new(flat: [u8; FLAT_DIM]) -> SixteenBoard {
-        SixteenBoard::new_with_dist(flat, calc_distance(flat))
+        SixteenBoard::new_with_dist(flat, calc_distance(&flat))
     }
 
     pub fn new_with_dist(flat: [u8; FLAT_DIM], dist: i32) -> SixteenBoard {
-        SixteenBoard { flat, dist, x_idx: index_of(flat, X) }
+        SixteenBoard { flat, dist, x_idx: index_of(&flat, X) }
     }
 
     pub fn print(&self) {
@@ -149,11 +149,11 @@ impl SixteenBoard {
     }
 
     fn calc_distance(&self) -> i32 {
-        calc_distance(self.flat)
+        calc_distance(&self.flat)
     }
 
     fn index(&self, elem: u8) -> usize {
-        index_of(self.flat, elem)
+        index_of(&self.flat, elem)
     }
 
     // Moves
@@ -174,7 +174,7 @@ impl SixteenBoard {
         moves
     }
 
-    fn move_idx(&self, move_type: Move) -> usize {
+    fn move_idx(&self, move_type: &Move) -> usize {
         match move_type {
             Move::LEFT => { self.x_idx - 1 },
             Move::UP => { self.x_idx - DIM },
@@ -183,12 +183,12 @@ impl SixteenBoard {
         }
     }
 
-    pub fn reverse_move(&mut self, move_type: Move) {
+    pub fn reverse_move(&mut self, move_type: &Move) {
         let move_type = get_reverse_move(move_type);
-        self.move_elem(move_type);
+        self.move_elem(&move_type);
     }
 
-    pub fn move_elem(&mut self, move_type: Move) {
+    pub fn move_elem(&mut self, move_type: &Move) {
         let move_idx = self.move_idx(move_type);
         self.update_dist(move_idx);
         self.swap_with_x(move_idx);
@@ -218,7 +218,7 @@ mod tests {
     use grids::{EASY_GRID, END_GRID, SAMPLE_GRID, UNSOLVABLE_GRID};
 
     #[test]
-    fn it_considers_sovled_board_solved() {
+    fn it_considers_solved_board_solved() {
         let solved = SixteenBoard::new(flatten(END_GRID));
         assert!(solved.solved());
     }
@@ -283,8 +283,8 @@ mod tests {
     fn move_test() {
         let mut sample = SixteenBoard::new(flatten(SAMPLE_GRID));
         assert_eq!(sample.x_idx(), 7);
-        sample.move_elem(UP);
-        sample.move_elem(LEFT);
+        sample.move_elem(&UP);
+        sample.move_elem(&LEFT);
         assert_eq!(sample.x_idx(), 2);
 
         let expected: SmallVec<[Move; 4]> = smallvec![LEFT, RIGHT, DOWN];
@@ -302,28 +302,28 @@ mod tests {
     #[test]
     fn move_multiple_times() {
         let mut sample = SixteenBoard::new(flatten(SAMPLE_GRID));
-        sample.move_elem(DOWN);
-        sample.move_elem(DOWN);
+        sample.move_elem(&DOWN);
+        sample.move_elem(&DOWN);
 
         let expected: SmallVec<[Move; 4]> = smallvec![LEFT, UP];
         assert_eq!(sample.valid_moves(), expected);
 
-        sample.move_elem(LEFT);
-        sample.move_elem(LEFT);
+        sample.move_elem(&LEFT);
+        sample.move_elem(&LEFT);
 
         let expected: SmallVec<[Move; 4]> = smallvec![LEFT, UP, RIGHT];
         assert_eq!(sample.valid_moves(), expected);
 
-        sample.move_elem(LEFT);
-        sample.move_elem(UP);
+        sample.move_elem(&LEFT);
+        sample.move_elem(&UP);
 
         let expected: SmallVec<[Move; 4]> = smallvec![UP, RIGHT, DOWN];
         assert_eq!(sample.valid_moves(), expected);
 
 
-        sample.move_elem(UP);
-        sample.move_elem(UP);
-        sample.move_elem(RIGHT);
+        sample.move_elem(&UP);
+        sample.move_elem(&UP);
+        sample.move_elem(&RIGHT);
 
         let expected: SmallVec<[Move; 4]> = smallvec![LEFT, RIGHT, DOWN];
         assert_eq!(sample.valid_moves(), expected);

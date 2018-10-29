@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="320261d0-d06b-455d-943a-f1ffe9655c05" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../js/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/board.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/puzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/puzzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fifteen-game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fifteen-game.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/board.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/board.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,9 +19,11 @@
     <session id="-706960392">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="3" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -37,14 +42,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="rs" value="6934" />
+          <entry key="rs" value="7082" />
           <entry key="toml" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Rust" value="6924" />
+          <entry key="Rust" value="7072" />
           <entry key="TOML file" value="21" />
         </counts>
       </usages-collector>
@@ -81,41 +86,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/solver.rs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/board.rs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="228">
-                  <caret line="174" column="5" lean-forward="true" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+                <state relative-caret-position="560">
+                  <caret line="192" column="24" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="24" />
                   <folding>
-                    <element signature="e#2054#2055#0" expanded="true" />
-                    <element signature="e#2106#2107#0" expanded="true" />
-                    <element signature="e#1875#1876#0" expanded="true" />
-                    <element signature="e#1937#1938#0" expanded="true" />
-                    <element signature="e#2931#2932#0" expanded="true" />
-                    <element signature="e#2955#2956#0" expanded="true" />
-                    <element signature="e#2991#2992#0" expanded="true" />
-                    <element signature="e#3016#3017#0" expanded="true" />
-                    <element signature="e#3049#3050#0" expanded="true" />
-                    <element signature="e#3073#3074#0" expanded="true" />
-                    <element signature="e#2130#2131#0" expanded="true" />
-                    <element signature="e#2171#2172#0" expanded="true" />
-                    <element signature="e#2767#2768#0" expanded="true" />
-                    <element signature="e#2795#2796#0" expanded="true" />
-                    <element signature="e#2219#2220#0" expanded="true" />
-                    <element signature="e#2275#2276#0" expanded="true" />
-                    <element signature="e#2313#2314#0" expanded="true" />
-                    <element signature="e#2352#2353#0" expanded="true" />
-                    <element signature="e#3203#3204#0" expanded="true" />
-                    <element signature="e#3243#3244#0" expanded="true" />
+                    <element signature="e#2292#2293#0" expanded="true" />
+                    <element signature="e#2344#2345#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -124,7 +111,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/sys_common/backtrace.rs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
+                <state relative-caret-position="765">
                   <caret line="51" selection-start-line="51" selection-end-line="51" />
                 </state>
               </provider>
@@ -133,7 +120,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libcore/iter/iterator.rs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="653">
+                <state relative-caret-position="16125">
                   <caret line="1113" column="6" selection-start-line="1113" selection-start-column="6" selection-end-line="1113" selection-end-column="6" />
                 </state>
               </provider>
@@ -142,7 +129,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/grids.rs">
               <provider selected="true" editor-type-id="text-editor">
@@ -155,20 +142,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/game.rs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="570">
-                  <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-                  <folding>
-                    <element signature="e#610#611#0" expanded="true" />
-                    <element signature="e#650#651#0" expanded="true" />
-                    <element signature="e#702#703#0" expanded="true" />
-                    <element signature="e#749#750#0" expanded="true" />
-                    <element signature="e#789#790#0" expanded="true" />
-                    <element signature="e#838#839#0" expanded="true" />
-                    <element signature="e#852#853#0" expanded="true" />
-                    <element signature="e#894#895#0" expanded="true" />
-                    <element signature="e#955#956#0" expanded="true" />
-                    <element signature="e#1002#1003#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="75">
+                  <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -186,9 +161,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>16</find>
-      <find>self.flat</find>
-      <find>FLAT_END_GRID</find>
       <find>use</find>
       <find>self.dim</find>
       <find>dist</find>
@@ -216,6 +188,9 @@
       <find>update_dist</find>
       <find>Moves</find>
       <find>MAX_MOVES</find>
+      <find>self.flat</find>
+      <find>move_board_to_state</find>
+      <find>move_elem</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -246,10 +221,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1699" />
-    <option name="y" value="-1417" />
-    <option name="width" value="2560" />
-    <option name="height" value="1417" />
+    <option name="x" value="55" />
+    <option name="y" value="23" />
+    <option name="width" value="1625" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -274,9 +249,11 @@
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -294,7 +271,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,7 +283,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -325,7 +301,7 @@
     <configuration name="Run fifteen-game" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="channel" value="DEFAULT" />
       <option name="command" value="run --package fifteen-game --bin fifteen-game" />
-      <option name="nocapture" value="true" />
+      <option name="allFeatures" value="true" />
       <option name="backtrace" value="SHORT" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
@@ -334,7 +310,7 @@
     <configuration name="Test board::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="channel" value="DEFAULT" />
       <option name="command" value="test --package fifteen-game --bin fifteen-game board::tests" />
-      <option name="nocapture" value="true" />
+      <option name="allFeatures" value="true" />
       <option name="backtrace" value="SHORT" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
@@ -363,11 +339,13 @@
       <workItem from="1537889918563" duration="270000" />
       <workItem from="1537890258044" duration="8666000" />
       <workItem from="1537964691246" duration="20986000" />
+      <workItem from="1540854894794" duration="208000" />
+      <workItem from="1540855132601" duration="1262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29922000" />
+    <option name="totallyTimeSpent" value="31392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,11 +357,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1699" y="-1417" width="2560" height="1417" extended-state="6" />
+    <frame x="55" y="23" width="1625" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49962264" visible="true" weight="0.09610802" />
-      <window_info id="Structure" order="1" sideWeight="0.50037736" side_tool="true" visible="true" weight="0.09610802" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49625668" visible="true" weight="0.19393556" />
+      <window_info id="Structure" order="1" sideWeight="0.5037433" side_tool="true" visible="true" weight="0.19393556" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -427,17 +405,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libcore/iter/iterator.rs">
+    <entry file="file://$PROJECT_DIR$/src/main.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="1113" column="6" selection-start-line="1113" selection-start-column="6" selection-end-line="1113" selection-end-column="6" />
+        <state relative-caret-position="150">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/sys_common/backtrace.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="765">
           <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libcore/iter/iterator.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16125">
+          <caret line="1113" column="6" selection-start-line="1113" selection-start-column="6" selection-end-line="1113" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -448,65 +433,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.rs">
+    <entry file="file://$PROJECT_DIR$/src/board.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="560">
+          <caret line="192" column="24" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="24" />
+          <folding>
+            <element signature="e#2292#2293#0" expanded="true" />
+            <element signature="e#2344#2345#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/solver.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="75">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-          <folding>
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/board.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="174" column="5" lean-forward="true" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
-          <folding>
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-            <element signature="e#1875#1876#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
-            <element signature="e#2931#2932#0" expanded="true" />
-            <element signature="e#2955#2956#0" expanded="true" />
-            <element signature="e#2991#2992#0" expanded="true" />
-            <element signature="e#3016#3017#0" expanded="true" />
-            <element signature="e#3049#3050#0" expanded="true" />
-            <element signature="e#3073#3074#0" expanded="true" />
-            <element signature="e#2130#2131#0" expanded="true" />
-            <element signature="e#2171#2172#0" expanded="true" />
-            <element signature="e#2767#2768#0" expanded="true" />
-            <element signature="e#2795#2796#0" expanded="true" />
-            <element signature="e#2219#2220#0" expanded="true" />
-            <element signature="e#2275#2276#0" expanded="true" />
-            <element signature="e#2313#2314#0" expanded="true" />
-            <element signature="e#2352#2353#0" expanded="true" />
-            <element signature="e#3203#3204#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="19" />
         </state>
       </provider>
     </entry>

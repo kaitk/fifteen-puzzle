@@ -19,28 +19,32 @@ impl Game {
         }
     }
 
-    pub fn move_board_to_state(&mut self, steps: SmallVec<[Move; 128]>) {
+    pub fn move_board_to_state(&mut self, steps: &SmallVec<[Move; 128]>) {
         for step in steps {
-            self.board.move_elem(step);
+             self.board.move_elem(&step);
         }
-        // TODO FIXME: this is needed
-        // self.steps = steps;
+        // self.steps = *steps.clone();
     }
 
-    pub fn replay_entire_board(&mut self, steps: SmallVec<[Move; 128]>) {
+    pub fn replay_entire_board(&mut self, steps: &SmallVec<[Move; 128]>) {
         self.board = self.initial_board.clone();
         self.move_board_to_state(steps);
+    }
+
+    pub fn update_board_for_grid(&mut self, board: SixteenBoard, steps: SmallVec<[Move; 128]>) {
+        self.board = board.clone();
+        self.steps = steps;
     }
 
     pub fn distance(&self) -> i32 {
         return self.board.dist();
     }
 
-    pub fn move_elem(&mut self, move_type: Move) {
+    pub fn move_elem(&mut self, move_type: &Move) {
         self.board.move_elem(move_type);
     }
 
-    pub fn undo_move(&mut self, move_type: Move) {
+    pub fn undo_move(&mut self, move_type: &Move) {
         self.board.reverse_move(move_type);
     }
 
