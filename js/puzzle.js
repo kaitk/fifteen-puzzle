@@ -12,32 +12,47 @@ const SAMPLE_GRID = [
 ];
 
 const EASY_GRID = [
-   [2,X,6,3],
-   [1,10,8,4],
-   [5,11,7,14],
-   [9,13,15,12],
+    [2,6,4,14],
+    [10,X,8,3],
+    [1,5,15,7],
+    [9,13,12,11],
+ ];
+
+const MEDIUM_GRID = [
+   [2,10,6,3],
+   [1,11,X,8],
+   [5,13,14,4],
+   [9,15,7,12],
 ];
 
-const game = new Game(new Board(SAMPLE_GRID));
-// const game = new Game(Board.generate());
 
-// const solver = new MoronSolver(game);
-//const solver = new StupidSolver(game);
-const solver = new Solver(game);
+const solve = (name, SolverClass, game) => {
+    const solver = new SolverClass(game);
+    console.time(name);
+    solver.solve();
+    console.timeEnd(name);   
+    console.log('Solution in:', game.steps.length ,'steps');
+    console.log();
+    
+    const validationGame = new Game(game.initialBoard);
+    validationGame.replayEntireBoard(game.steps);
+    console.log('validated:', validationGame.solved());
+    // console.log('Solved board is:');
+    // console.log(validationGame.board.toString());
+}
 
-console.log('Started solving this board:');
-console.log(game.initialBoard.toString());
-console.time('solver');
-solver.solve();
-console.timeEnd('solver');
 
-console.log('Started with this board:');
-console.log(game.initialBoard.toString());
-console.log('Solution in:', game.steps.length ,'steps');
+const easyBoard = new Board(EASY_GRID);
+const mediumBoard = new Board(MEDIUM_GRID);
+const sampleBoard = new Board(SAMPLE_GRID);
+const randomBoard = Board.generate();
 
-console.log('Validating ...');
-const validationGame = new Game(game.initialBoard);
-validationGame.replayEntireBoard(game.steps);
-console.log('validated:', validationGame.solved());
-console.log('Solved board is:');
-console.log(validationGame.board.toString());
+const board = mediumBoard;
+
+console.log('Solving this board:');
+console.log(board.toString());
+console.log('distance', board.distance());
+
+solve('moronSolver', MoronSolver, new Game(board));
+solve('stupidSolver', StupidSolver, new Game(board));
+solve('solver', Solver, new Game(board));

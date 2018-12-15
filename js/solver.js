@@ -26,6 +26,9 @@ class Solver {
     return s1.dist - s2.dist
   }
 
+  scoreComparator(s1, s2) {
+    return  s1.score - s2.score;
+  }
 
   filterOutBack(previousMoves, nextMoves) {
     if(previousMoves.length > 0) {
@@ -37,7 +40,8 @@ class Solver {
   }
 
   candidateMoves(previousMoves, nextMoves) {
-    return shuffle(this.filterOutBack(previousMoves, nextMoves));
+    //return shuffle(this.filterOutBack(previousMoves, nextMoves));
+    return this.filterOutBack(previousMoves, nextMoves);
   }
 
   nextMoveInThreshold(previousMoves, dist) {
@@ -48,17 +52,17 @@ class Solver {
   enqueueMoveIfValid(game, nextMove) {
     const dist = game.distance();
     if(this.nextMoveInThreshold(game.steps, dist)) {
-      const grid = game.grid();
-      const visitedDist = this.visited[grid.toString()];
+      // const grid = game.grid();
+      const visitedDist = null; //this.visited[grid.toString()];
       if(!visitedDist || dist <= visitedDist) {
         const steps = game.steps.concat(nextMove);
         this.queue.push({
-          grid: grid,
+          // grid: grid,
           steps: steps,
           dist: dist,
           score: dist + steps.length
         });
-        this.visited[grid.toString()] = dist;
+        // this.visited[grid.toString()] = dist;
       }
     }
   }
@@ -75,7 +79,7 @@ class Solver {
   solveStep(state) {
     if(state.dist < this.minDist) {
       this.minDist = state.dist;
-      console.log('min distance so far:', this.minDist);
+      // console.log('min distance so far:', this.minDist);
     }
     //validate move still within threshold
     if(this.maxMoves != MAX_MOVES) {
@@ -87,8 +91,8 @@ class Solver {
       }
     }
 
-    // this.game.updateBoardForSteps(state.steps);
-    this.game.updateBoardForGrid(state.grid, state.dist, state.steps);
+    this.game.updateBoardForSteps(state.steps);
+    // this.game.updateBoardForGrid(state.grid, state.dist, state.steps);
 
     if(this.game.solved()) {
       this.maxMoves = this.game.steps.length;

@@ -33,7 +33,8 @@ class MoronSolver {
   }
 
   candidateMoves(previousMoves, nextMoves) {
-    return shuffle(this.filterOutBack(previousMoves, nextMoves));
+    //return shuffle(this.filterOutBack(previousMoves, nextMoves));
+    return this.filterOutBack(previousMoves, nextMoves);
   }
 
   nextMoveValid(previousMoves, dist) {
@@ -61,7 +62,7 @@ class MoronSolver {
   solveStep(state) {
     if(state.score < this.minDist) {
       this.minDist = state.score;
-      console.log('min distance so far:', this.minDist);
+      // console.log('min distance so far:', this.minDist);
     }
     const lastSteps = this.game.steps;
     if(state && lastSteps) {

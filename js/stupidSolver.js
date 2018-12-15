@@ -35,6 +35,7 @@ class StupidSolver {
   }
 
   candidateMoves(previousMoves, nextMoves) {
+    //return shuffle(this.filterOutBack(previousMoves, nextMoves));
     return this.filterOutBack(previousMoves, nextMoves);
   }
 
@@ -67,7 +68,7 @@ class StupidSolver {
   solveStep(state) {
     if(state.dist < this.minDist) {
       this.minDist = state.dist;
-      console.log('min distance so far:', this.minDist);
+      // console.log('min distance so far:', this.minDist);
     }
     //validate move still within threshold
     if(this.maxMoves != MAX_MOVES) {
